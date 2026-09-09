@@ -38,7 +38,18 @@ nav ul {
 
 .logo {
     font-weight: 600;
-    font-size: 18px;}
+    font-size: 16px;
+    color: #e6f1ff;
+    background-color: rgba(59, 130, 246, 0.15);
+    border: 1px solid #3b82f6;
+    border-radius: 6px;
+    padding: 4px 10px;
+    transition: background-color 0.2s ease;
+}
+
+.logo:hover {
+    background-color: rgba(59, 130, 246, 0.3);
+}
 #hero {
     min-height: 85vh;
     display: flex;
