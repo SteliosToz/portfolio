@@ -215,3 +215,34 @@ nav a.active {
     border-bottom: 2px solid #38bdf8;
     padding-bottom: 4px;
 }
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #e6f1ff;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+   
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: #0a1628;
+        padding: 20px 24px;
+        gap: 16px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
