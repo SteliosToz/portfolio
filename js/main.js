@@ -67,8 +67,15 @@ let charIndex = 0;
 
 function typeTerminal() {
     if (lineIndex >= terminalLines.length) {
+        setTimeout(restartTerminal, 5000);
         return;
     }
+    function restartTerminal() {
+    terminalBody.innerHTML = "";
+    lineIndex = 0;
+    charIndex = 0;
+    typeTerminal();
+}
 
     const currentLine = terminalLines[lineIndex];
 

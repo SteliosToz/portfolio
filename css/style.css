@@ -44,9 +44,8 @@ nav ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 48px;
+    padding: 0;
     position: relative;
-    overflow: hidden;
 }
 
 #hero h1 {
@@ -68,8 +67,7 @@ nav ul {
     max-width: 540px;
 }
 section {
-    padding: 100px 48px;
-    max-width: 800px;
+    padding: 100px 0;
 }
 
 section h2 {
@@ -335,4 +333,44 @@ nav a.active {
 
 .terminal-line {
     margin: 0;
+}
+.page-layout {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    grid-template-areas:
+        "hero terminal"
+        "about terminal"
+        "projects terminal"
+        "contact terminal";
+    gap: 48px;
+    padding: 0 48px;
+}
+
+#hero { grid-area: hero; }
+#about { grid-area: about; }
+#projects { grid-area: projects; }
+#contact { grid-area: contact; }
+
+.terminal-sidebar {
+    grid-area: terminal;
+    align-self: start;
+    position: sticky;
+    top: 100px;
+}
+
+@media (max-width: 1024px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "hero"
+            "terminal"
+            "about"
+            "projects"
+            "contact";
+        padding: 0 24px;
+    }
+
+    .terminal-sidebar {
+        position: static;
+    }
 }
