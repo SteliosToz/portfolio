@@ -78,3 +78,61 @@ section p {
     color: #ccd6f6;
     font-size: 17px;
 }
+#projects {
+    max-width: 1000px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-top: 8px;
+}
+
+.project-card {
+    background-color: #0a1628;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    display: block;
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.project-content h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.project-content p {
+    font-size: 15px;
+    color: #8892b0;
+    margin-bottom: 16px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.project-tags span {
+    font-size: 12px;
+    padding: 4px 10px;
+    border: 1px solid #3b82f6;
+    color: #3b82f6;
+    border-radius: 4px;
+}
+
+.project-content a {
+    color: #38bdf8;
+    font-weight: 500;
+    font-size: 14px;
+}
