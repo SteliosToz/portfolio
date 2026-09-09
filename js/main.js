@@ -41,3 +41,56 @@ navLinks.forEach((link) => {
         menuToggle.textContent = "☰";
     });
 });
+const terminalLines = [
+    { text: "$ whoami", color: "#e6f1ff" },
+    { text: "> Stelios Tozios — Junior Web & Software Developer", color: "#38bdf8" },
+    { text: "", color: "" },
+    { text: "$ cat stack.txt", color: "#e6f1ff" },
+    { text: "> HTML · CSS · JavaScript", color: "#38bdf8" },
+    { text: "> WordPress · WooCommerce", color: "#38bdf8" },
+    { text: "> Python", color: "#38bdf8" },
+    { text: "", color: "" },
+    { text: "$ cat studied.txt", color: "#e6f1ff" },
+    { text: "> Java · C · C++", color: "#38bdf8" },
+    { text: "", color: "" },
+    { text: "$ cat currently.txt", color: "#e6f1ff" },
+    { text: "> Building real-world projects", color: "#38bdf8" },
+    { text: "> Open to junior dev opportunities", color: "#38bdf8" },
+    { text: "", color: "" },
+    { text: "$ contact --email", color: "#e6f1ff" },
+    { text: "> steliostozios@gmail.com", color: "#22c55e" }
+];
+
+const terminalBody = document.getElementById("terminal-body");
+let lineIndex = 0;
+let charIndex = 0;
+
+function typeTerminal() {
+    if (lineIndex >= terminalLines.length) {
+        return;
+    }
+
+    const currentLine = terminalLines[lineIndex];
+
+    if (charIndex === 0) {
+        const lineElement = document.createElement("p");
+        lineElement.className = "terminal-line";
+        lineElement.style.color = currentLine.color;
+        lineElement.id = `terminal-line-${lineIndex}`;
+        terminalBody.appendChild(lineElement);
+    }
+
+    const lineElement = document.getElementById(`terminal-line-${lineIndex}`);
+
+    if (charIndex < currentLine.text.length) {
+        lineElement.textContent += currentLine.text[charIndex];
+        charIndex++;
+        setTimeout(typeTerminal, 30);
+    } else {
+        lineIndex++;
+        charIndex = 0;
+        setTimeout(typeTerminal, 300);
+    }
+}
+
+typeTerminal();
