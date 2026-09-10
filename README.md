@@ -2,7 +2,7 @@
 
 My personal developer portfolio, built from scratch with vanilla HTML, CSS, and JavaScript — no frameworks, no build tools.
 
-**Live site:** _(coming soon)_
+**Live site:** [steliostozios.com](https://steliostozios.com)
 
 ## Features
 
